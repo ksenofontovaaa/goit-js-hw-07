@@ -21,6 +21,7 @@ const creatingOfGallery = galleryItems.map(element=>
     <img
       class="gallery__image"
       src="${element.preview}"
+      loading = "lazy"
       data-source="${element.original}"
       alt="${element.description}"
     />
@@ -29,11 +30,17 @@ const creatingOfGallery = galleryItems.map(element=>
     `).join("");
     allGallery.insertAdjacentHTML('beforeend', creatingOfGallery);
 // делегування події
-// allGallery.addEventListener("click", onClick);
+allGallery.addEventListener("click", onClick);
 
-// function onClick(event) {
-//     if(event.target.nodeName !== 'IMG'){
-//         return
-//     }
-//     console.log(event.target.textContent);
-// }
+function onClick(event) {
+  event.preventDefault();
+    if(event.target.nodeName !== 'IMG'){
+        return
+    }
+    console.log(event.target.textContent);
+    const instance = basicLightbox.create(`
+    <img src="assets/images/image.png" width="800" height="600">
+`);
+
+instance.show();
+}

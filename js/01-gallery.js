@@ -30,8 +30,9 @@ function onClick(event) {
     }
     console.log(event.target.textContent);
     const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
+    <img src="https://cdn.pixabay.com/photo/2019/05/16/09/47/beach-4206785_1280.jpg" width="800" height="600">
 `);
 
 instance.show();
 }
+/* <img src="assets/images/image.png" width="800" height="600"></img> */
